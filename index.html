@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Up next: Plone 5</title>
+
+    <meta name="description" content="Ein Ausblick auf die kommende Version vom CMS Plone.">
+    <meta name="author" content="Johannes Raggam">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!--
+        colors:
+        https://kuler.adobe.com/create/color-wheel/?base=2&rule=Analogous&selected=4&name=My%20Kuler%20Theme&mode=rgb&rgbvalues=0.7950980392156863,0.21951409859249027,0,0.5686743281526693,0.018820642827770902,0.8350980392156863,0,0.5137254901960784,0.7450980392156863,0.14597107605243181,0.8350980392156863,0.04175490196078435,0.7950980392156863,0.5971390297864673,0.03975490196078435&swatchOrder=0,1,2,3,4
+
+        0083BE
+        9105D5
+        CB3800
+        25D50B
+
+        CBBE00
+        -->
+
+    <div class="reveal">
+      <div class="slides">
+
+        <section data-background="#0083BE">
+          <h1>Up next: Plone 5</h1>
+          <h3>über den Status und die Zukunft von Plone</h3>
+          <p>
+            <small>Von <a href="http://johannes.raggam.co.at">Johannes Raggam</a> / <a href="http://twitter.com/thetetet">@thetetet</a> / <a href="http://github.com/thet">github.com/thet</a></small>
+          </p>
+          <p>
+            <small><a href="?print-pdf">Printansicht / PDF Export</a></small>
+          </p>
+          <aside class="notes">
+            <ul>
+              <li>b - 'paused' mode.</li>
+              <li>Alt-Click - zoom.</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section data-background="#0083BE">
+          <h2>Plone?</h2>
+          <blockquote>
+            Plone ist ein Content Management System, basierend auf dem Applikationsserver Zope, der Objektdatenbank ZODB und der Programmiersprache Python.
+          </blockquote>
+        </section>
+
+        <section data-background="#CBBE00">
+          <h2>$ whoami</h2>
+          <h3>Johannes Raggam (DI(FH))</h3>
+          <p>Web Developer, Open Source Enthusiast, Python Aficionado, Plone Developer, Music Enthusiast, Family Guy.</p>
+          <p>Plone seit 2004, Plone Core Contributor seit 2009, BlueDynamics Alliance Partner seit 2010, Plone Framework Team Member seit 2012</p>
+        </section>
+
+        <section data-background="#0083BE">
+          <!-- TODO: Plone 4 Screenshot -->
+          <section data-background="#0083BE">
+            <h2>$ whatis Plone</h2>
+            <ul>
+              <li>Enterprise CMS</li>
+              <li>Collaboration System</li>
+              <li>Document Management System</li>
+              <li>CMS Framework</li>
+            </ul>
+          </section>
+          <section data-background="#0083BE">
+            <h3>$ apropos Plone</h3>
+            <ul>
+              <li>Object Database, Content Tree und Object Traversal</li>
+              <li>Security Record ++</li>
+              <li>Permission und Workflow System ++</li>
+              <li>UI: Backend = Frontend</li>
+              <li>Plugability ++</li>
+            </ul>
+          </section>
+          <section data-background="#0083BE">
+            <h3>$ locate Plone</h3>
+            <ul>
+              <li>GPLv2</li>
+              <li>Python 2.7</li>
+              <li>Zope 2, Mother of all Frameworks</li>
+              <li>ZODB (Zope Object Database)</li>
+              <li>Zope Component Architecture GOODNESS!</li>
+              <li>Legacy Code Hell MADNESS!</li>
+              <li>Buildout GOOD/MADNESS!</li>
+              <li>236 PyPI Packges!</li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-background="#0BD52D">
+          <section>
+            <h2>$ whois Plone</h2>
+            <ul>
+              <li>Seit 2002 (Europython, Alex Limi, Alan Runyan: Plone 1.0)</li>
+
+              <li>Offenes Entwicklungsmodell:
+                <ul>
+                  <li><a href="https://github.com/collective">github.com/collective</a> - Github-Issue für R/W Access - 426 Members</li>
+                  <li><a href="https://github.com/plone/">github.com/plone</a> - Plone Core Contributor Agreement - 318 Members</li>
+                </ul>
+              </li>
+              <li>= 318 Core Contributors!</li>
+              <li>PLIP Process</li>
+              <li>Sprints</li>
+            </ul>
+          </section>
+          
+          <!-- TODO: Sprint pix -->
+
+          <section>
+            <ul>
+
+              <li>Github to the rescue!
+                <ul>
+                  <li>Pull-Requests</li>
+                  <li>Code reviews</li>
+                  <li>GIT! (Bis 2010: svn)</li>
+                </ul>
+              </li>
+
+              <li>
+                Continuous Integration to the rescue!
+                <ul>
+                  <li>Jenkins</li>
+                  <li>TravisCI</li>
+                </ul>
+              </li>
+
+            </ul>
+            <aside class="notes">
+              Europython 2002: 61 Tracks, 18 davon direkt Zope related.
+            </aside>
+          </section>
+          <section>
+            <h3>The Plone Foundation</h3>
+            <ul>
+              <li>Plone Board</li>
+              <li>Framework Team</li>
+              <li>Testing Team</li>
+              <li>Documentation Team</li>
+              <li>UI Team</li>
+              <li>Accessibility Team</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>$ whereis Plone</h2>
+            <h3>Plone <a href="http://plone.org/">plone.org</a></h3>
+            <iframe src="http://plone.org/" width="1200px" height="800px" scrolling="no" sandbox allowfullscreen></iframe>
+          </section>
+
+          <section>
+            <h3>Free Software Foundateion <a href="http://fsf.org/">fsf.org</a></h3>
+            <iframe src="http://fsf.org/" width="1200px" height="800px" scrolling="no" sandbox allowfullscreen></iframe>
+          </section>
+
+          <section>
+            <h3>NASA Science <a href="http://science.nasa.gov/"></a>science.nasa.gov</h3>
+            <iframe src="http://science.nasa.gov/" width="1200px" height="800px" scrolling="no" sandbox allowfullscreen></iframe>
+          </section>
+
+          <section>
+            <h3>Amnesty International Schweiz <a href="http://www.amnesty.ch/">amnesty.ch</a></h3>
+            <iframe src="http://www.amnesty.ch/" width="1200px" height="800px" scrolling="no" sandbox allowfullscreen></iframe>
+          </section>
+
+          <section>
+            <h3>donaufestival <a href="http://www.donaufestival.at/">donaufestival.at</a> + NÖKU gesamt</h3>
+            <iframe src="http://www.donaufestival.at/" width="1200px" height="800px" scrolling="no" sandbox allowfullscreen></iframe>
+          </section>
+
+          <section>
+            <h3>HTU Graz <a href="http://htu.tugraz.at/">htu.tugraz.at</a></h3>
+            <iframe src="http://htu.tugraz.at/" width="1200px" height="800px" scrolling="no" sandbox allowfullscreen></iframe>
+          </section>
+
+          <section>
+            <h3>Radio Helsinki <a href="http://helsinki.at/">helsinki.at</a> + Django</h3>
+            <iframe src="http://helsinki.at/" width="1200px" height="800px" scrolling="no" sandbox allowfullscreen></iframe>
+          </section>
+
+          <section>
+            <h3><a href="http://mur.at/">mur.at</a></h3>
+            <iframe src="http://mur.at/" width="1200px" height="800px" scrolling="no" sandbox allowfullscreen></iframe>
+          </section>
+
+        </section>
+
+        <section data-background="#0083BE">
+
+          <section data-background="#0083BE">
+            <h2>To the rescue: Plone 5</h2>
+            <!-- TODO: Plone 5 screenshot -->
+          </section>
+
+          <section>
+            <h3>Neues Contenttype Framework: plone.app.contenttypes</h3>
+            <ul>
+              <li>Basierend auf Dexterity (Schemata sowie Behaviors definieren Typ-Funktionalität)</li>
+              <li>Löst altes Archetypes basiertes Framework ab</li>
+              <li>Schneller, schlanker, einfachere API</li>
+              <li>Pythonic anstatt Javaesk</li>
+            </ul>
+            <p>Bereits in Plone 4.3 verwendbar</p>
+          </section>
+
+          <section>
+            <h3>Neues Kalender Framework: plone.app.event</h3>
+            <ul>
+              <li>Zeitzonen!</li>
+              <li>Recurring Events!</li>
+              <li>Verbesserter iCalendar Export</li>
+              <li>iCalendar Import</li>
+            </ul>
+            <p>Bereits in Plone 4.3 verwendbar</p>
+          </section>
+
+          <section>
+            <h3>Neues Javasript Development Environment: Mockup</h3>
+            <p><a href="http://plone.github.io/mockup/">plone.github.io/mockup</a></p>
+            <ul>
+              <li>Javascripts ohne Plone und Python</li>
+              <li>Easy für Frontend Entwickler</li>
+              <li>Weite Teile völlig generisch</li>
+              <li><a href="http://patternslib.com/">Patternslib</a> basiert (ähnlich <a href="http://www.w3.org/TR/components-intro/">Web Components</a>)</li>
+              <li>Grunt Task Management</li>
+              <li>Bower Package Management</li>
+              <li>Require.js</li>
+              <li>Tests ++ (Karma, Chai)</li>
+              <li>Bootstrap 3</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Neues Widgetset: plone.app.widgets</h3>
+            <ul>
+              <li>Komplett modernisiertes Form Widget Set</li>
+              <li>Basierend auf Javasript Framework Mockup</li>
+            </ul>
+            <p>Bereits in Plone 4.3 verwendbar</p>
+          </section>
+
+          <section>
+            <h3>Neues Theme: Barceloneta</h3>
+            <ul>
+              <li>Moderne Web Technologien: HTML 5, CSS 3</li>
+              <li>Basierend auf Javasript Framework Mockup</li>
+              <li>Bootstrap 3</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Mehr</h3>
+            <ul>
+              <li>Radikales Aufräumen mit Legacy Code</li>
+              <li>CSRF Protection</li>
+              <li>Neue Multilingual Lösung</li>
+              <li>Chameleon Template Engine</li>
+            </ul>
+            <p>Noch mehr: <a href="https://dev.plone.org/report/24">https://dev.plone.org/report/24</a></p>
+          </section>
+
+          <!-- TODO: Barceloneta Screenshot -->
+
+        </section>
+
+        <section data-background="#CB4B0A">
+          <h2>Use It!</h2>
+          <ul>
+            <li>Plone 4: <a href="https://github.com/collective/minimalplone4/">github.com/collective/minimalplone4</a></li>
+            <li>Plone 5: <a href="https://github.com/plone/buildout.coredev/tree/5.0">https://github.com/plone/buildout.coredev/tree/5.0</a></li>
+          </ul>
+          <pre><code>
+            $ git clone git@github.com:plone/buildout.coredev.git
+            $ cd buildout.coredev
+            $ git co 5.0
+
+            $ python2.7 bootstrap.py
+            $ ./bin/buildout
+            $ ./bin/instance fg
+          </code></pre>
+        </section>
+
+        <section data-background="#0083BE">
+          <h1>That's all folks!</h1>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        backgroundTransition: 'slide',
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
